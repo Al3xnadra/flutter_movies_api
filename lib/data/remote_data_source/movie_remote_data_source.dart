@@ -6,7 +6,7 @@ import 'package:retrofit/retrofit.dart';
 part 'movie_remote_data_source.g.dart';
 
 @injectable
-@RestApi(baseUrl: 'https://imdb236.p.rapidapi.com')
+@RestApi()
 abstract class MovieRemoteRetrofitDataSource {
   @factoryMethod
   factory MovieRemoteRetrofitDataSource(Dio dio) =
