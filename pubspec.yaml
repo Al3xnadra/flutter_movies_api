@@ -11,6 +11,7 @@ environment:
 
 dependencies:
   dio: ^5.8.0+1
+  flutter_dotenv: ^5.2.1
   flutter:
     sdk: flutter
   flutter_bloc: ^9.0.0
@@ -43,3 +44,4 @@ flutter:
   assets:
     # Add assets from the images directory to the application.
     - assets/images/
+    - .env
