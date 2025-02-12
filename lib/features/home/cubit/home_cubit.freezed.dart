@@ -15,12 +15,22 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$HomeState {}
+mixin _$HomeState {
+  List<MovieModel> get movieModel => throw _privateConstructorUsedError;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $HomeStateCopyWith<HomeState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
 
 /// @nodoc
 abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
+  @useResult
+  $Res call({List<MovieModel> movieModel});
 }
 
 /// @nodoc
@@ -35,13 +45,29 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? movieModel = null,
+  }) {
+    return _then(_value.copyWith(
+      movieModel: null == movieModel
+          ? _value.movieModel
+          : movieModel // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$HomeStateImplCopyWith<$Res> {
+abstract class _$$HomeStateImplCopyWith<$Res>
+    implements $HomeStateCopyWith<$Res> {
   factory _$$HomeStateImplCopyWith(
           _$HomeStateImpl value, $Res Function(_$HomeStateImpl) then) =
       __$$HomeStateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<MovieModel> movieModel});
 }
 
 /// @nodoc
@@ -54,28 +80,73 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? movieModel = null,
+  }) {
+    return _then(_$HomeStateImpl(
+      movieModel: null == movieModel
+          ? _value._movieModel
+          : movieModel // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$HomeStateImpl implements _HomeState {
-  const _$HomeStateImpl();
+  const _$HomeStateImpl({final List<MovieModel> movieModel = const []})
+      : _movieModel = movieModel;
+
+  final List<MovieModel> _movieModel;
+  @override
+  @JsonKey()
+  List<MovieModel> get movieModel {
+    if (_movieModel is EqualUnmodifiableListView) return _movieModel;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_movieModel);
+  }
 
   @override
   String toString() {
-    return 'HomeState()';
+    return 'HomeState(movieModel: $movieModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$HomeStateImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$HomeStateImpl &&
+            const DeepCollectionEquality()
+                .equals(other._movieModel, _movieModel));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_movieModel));
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>
+      __$$HomeStateImplCopyWithImpl<_$HomeStateImpl>(this, _$identity);
 }
 
 abstract class _HomeState implements HomeState {
-  const factory _HomeState() = _$HomeStateImpl;
+  const factory _HomeState({final List<MovieModel> movieModel}) =
+      _$HomeStateImpl;
+
+  @override
+  List<MovieModel> get movieModel;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
