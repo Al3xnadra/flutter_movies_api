@@ -17,6 +17,8 @@ import 'package:flutter_movies_api/data/remote_data_source/movie_remote_data_sou
     as _i242;
 import 'package:flutter_movies_api/domain/repositories/movie_repository.dart'
     as _i3;
+import 'package:flutter_movies_api/features/bottom_navigation/cubit/bottom_navigation_cubit.dart'
+    as _i175;
 import 'package:flutter_movies_api/features/home/cubit/home_cubit.dart'
     as _i185;
 import 'package:get_it/get_it.dart' as _i174;
@@ -35,6 +37,8 @@ extension GetItInjectableX on _i174.GetIt {
     );
     final registerModule = _$RegisterModule();
     gh.factory<_i889.Log>(() => _i889.Log());
+    gh.factory<_i175.BottomNavigationCubit>(
+        () => _i175.BottomNavigationCubit());
     gh.factory<String>(
       () => registerModule.baseUrl,
       instanceName: 'BaseUrl',
