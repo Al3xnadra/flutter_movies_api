@@ -10,6 +10,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:dio/dio.dart' as _i361;
+import 'package:flutter_movies_api/app/config/log.dart' as _i889;
 import 'package:flutter_movies_api/app/injection/injection_container.dart'
     as _i394;
 import 'package:flutter_movies_api/data/remote_data_source/movie_remote_data_source.dart'
@@ -33,6 +34,7 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     final registerModule = _$RegisterModule();
+    gh.factory<_i889.Log>(() => _i889.Log());
     gh.factory<String>(
       () => registerModule.baseUrl,
       instanceName: 'BaseUrl',

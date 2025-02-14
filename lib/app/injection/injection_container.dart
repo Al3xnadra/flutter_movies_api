@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_movies_api/app/config/api_service.dart';
 import 'package:flutter_movies_api/app/injection/injection_container.config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
@@ -19,8 +19,8 @@ abstract class RegisterModule {
         BaseOptions(
           baseUrl: url,
           headers: {
-            'x-rapidapi-host': dotenv.env['HOST'],
-            'x-rapidapi-key': dotenv.env['API_KEY']
+            'x-rapidapi-host': ApiService().host,
+            'x-rapidapi-key': ApiService().apiKey
           },
         ),
       );
