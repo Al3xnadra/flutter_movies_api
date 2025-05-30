@@ -12,7 +12,7 @@ void configureDependencies() => getIt.init();
 @module
 abstract class RegisterModule {
   @Named('BaseUrl')
-  String get baseUrl => 'https://imdb236.p.rapidapi.com';
+  String get baseUrl => 'https://imdb236.p.rapidapi.com/api';
 
   @singleton
   Dio dio(@Named('BaseUrl') String url) => Dio(
