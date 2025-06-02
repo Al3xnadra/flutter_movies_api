@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 class MovieImage extends StatelessWidget {
   const MovieImage({
     super.key,
+    required this.image,
   });
+
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +19,7 @@ class MovieImage extends StatelessWidget {
         image: DecorationImage(
           fit: BoxFit.fitWidth,
           alignment: Alignment.topCenter,
-          image: NetworkImage(
-              'https://m.media-amazon.com/images/M/MV5BMDAyY2FhYjctNDc5OS00MDNlLThiMGUtY2UxYWVkNGY2ZjljXkEyXkFqcGc@._V1_.jpg'),
+          image: NetworkImage(image),
         ),
       ),
     );

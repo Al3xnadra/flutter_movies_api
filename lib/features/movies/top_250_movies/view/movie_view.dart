@@ -6,6 +6,7 @@ import 'package:flutter_movies_api/features/movies/top_250_movies/widgets/detail
 import 'package:flutter_movies_api/features/movies/top_250_movies/widgets/icon_back.dart';
 import 'package:flutter_movies_api/features/movies/top_250_movies/widgets/movie_image.dart';
 import 'package:flutter_movies_api/features/movies/top_250_movies/widgets/top_details.dart';
+import 'package:intl/intl.dart';
 
 class MovieView extends StatelessWidget {
   const MovieView({super.key, required this.movieModel});
@@ -22,26 +23,43 @@ class MovieView extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          BackgroundImage(),
+          BackgroundImage(
+            image: movieModel.primaryImage,
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ListView(
               children: [
-                MovieImage(),
+                MovieImage(
+                  image: movieModel.primaryImage,
+                ),
                 Text(
-                  'The Shawshank Redemption',
+                  movieModel.primaryTitle,
                   style: headlineLarge,
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 10),
-                TopDetails(),
+                TopDetails(
+                  relaseDate:
+                      DateFormat('yyy-MM-dd').format(movieModel.releaseDate!),
+                  duration: '${movieModel.runtimeMinutes} Minutes',
+                  genre: movieModel.genres.first,
+                ),
                 SizedBox(height: 10),
                 Text(
-                  'A banker convicted of uxoricide forms a friendship over a quater century with a hardened convict, while maintaining his innocence and trying to remain hopeful through simple compassion.',
+                  movieModel.description,
                   style: bodyLarge,
                   textAlign: TextAlign.center,
                 ),
-                DetailsMovie(),
+                DetailsMovie(
+                  productionCompanies: [
+                    ...movieModel.productionCompanies.map((e) => e.name)
+                  ],
+                  filmingLocations: movieModel.filmingLocations ?? [],
+                  spokenLanguages: movieModel.spokenLanguages ?? [],
+                  budget: movieModel.budget,
+                  grossWorldwide: movieModel.grossWorldwide,
+                ),
               ],
             ),
           ),
