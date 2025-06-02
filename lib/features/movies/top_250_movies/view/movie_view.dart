@@ -55,8 +55,8 @@ class MovieView extends StatelessWidget {
                   productionCompanies: [
                     ...movieModel.productionCompanies.map((e) => e.name)
                   ],
-                  filmingLocations: movieModel.filmingLocations ?? [],
-                  spokenLanguages: movieModel.spokenLanguages ?? [],
+                  filmingLocations: movieModel.filmingLocations,
+                  spokenLanguages: movieModel.spokenLanguages,
                   budget: movieModel.budget,
                   grossWorldwide: movieModel.grossWorldwide,
                 ),
@@ -68,3 +68,7 @@ class MovieView extends StatelessWidget {
     );
   }
 }
+
+//add rating widget
+//add links to trailer and imdb page, insta, fb 
+//add genres

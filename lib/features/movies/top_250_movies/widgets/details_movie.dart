@@ -24,11 +24,11 @@ class DetailsMovie extends StatelessWidget {
           thickness: 2,
         ),
         Text('Details', style: headlineMedium),
-        if (productionCompanies != null)
+        if (productionCompanies!.isNotEmpty)
           detailItem('Production Companies: ', ' • ', productionCompanies!),
-        if (filmingLocations != null)
+        if (filmingLocations!.isNotEmpty)
           detailItem('Filming locations: ', ' • ', filmingLocations!),
-        if (spokenLanguages != null)
+        if (spokenLanguages!.isNotEmpty)
           detailItem('Language: ', ' • ', spokenLanguages!),
         if (budget != null) detailBudget('Budget: ', budget),
         if (grossWorldwide != null)
