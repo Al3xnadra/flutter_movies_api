@@ -15,12 +15,18 @@ import 'package:flutter_movies_api/app/injection/injection_container.dart'
     as _i394;
 import 'package:flutter_movies_api/data/remote_data_source/movie_remote_data_source.dart'
     as _i242;
+import 'package:flutter_movies_api/data/remote_data_source/series_remote_data_source.dart'
+    as _i747;
 import 'package:flutter_movies_api/domain/repositories/movie_repository.dart'
     as _i3;
+import 'package:flutter_movies_api/domain/repositories/series_repository.dart'
+    as _i999;
 import 'package:flutter_movies_api/features/bottom_navigation/cubit/bottom_navigation_cubit.dart'
     as _i175;
 import 'package:flutter_movies_api/features/home/cubit/home_cubit.dart'
     as _i185;
+import 'package:flutter_movies_api/features/series/top_250_series/cubit/series_cubit.dart'
+    as _i770;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
@@ -47,10 +53,16 @@ extension GetItInjectableX on _i174.GetIt {
         () => registerModule.dio(gh<String>(instanceName: 'BaseUrl')));
     gh.factory<_i242.MovieRemoteRetrofitDataSource>(
         () => _i242.MovieRemoteRetrofitDataSource(gh<_i361.Dio>()));
+    gh.factory<_i747.SeriesRemoteRetrofitDataSource>(
+        () => _i747.SeriesRemoteRetrofitDataSource(gh<_i361.Dio>()));
     gh.factory<_i3.MovieRepository>(
         () => _i3.MovieRepository(gh<_i242.MovieRemoteRetrofitDataSource>()));
+    gh.factory<_i999.SeriesRepository>(() =>
+        _i999.SeriesRepository(gh<_i747.SeriesRemoteRetrofitDataSource>()));
     gh.factory<_i185.HomeCubit>(
         () => _i185.HomeCubit(gh<_i3.MovieRepository>()));
+    gh.factory<_i770.SeriesCubit>(
+        () => _i770.SeriesCubit(gh<_i999.SeriesRepository>()));
     return this;
   }
 }
