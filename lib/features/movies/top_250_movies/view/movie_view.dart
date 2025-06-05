@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_movies_api/app/config/constants.dart';
 import 'package:flutter_movies_api/domain/models/movie_model.dart';
-import 'package:flutter_movies_api/features/movies/top_250_movies/widgets/background_image.dart';
-import 'package:flutter_movies_api/features/movies/top_250_movies/widgets/details_movie.dart';
-import 'package:flutter_movies_api/features/movies/top_250_movies/widgets/icon_back.dart';
-import 'package:flutter_movies_api/features/movies/top_250_movies/widgets/movie_image.dart';
-import 'package:flutter_movies_api/features/movies/top_250_movies/widgets/top_details.dart';
+import 'package:flutter_movies_api/features/widgets/background_image.dart';
+import 'package:flutter_movies_api/features/widgets/details_productions.dart';
+import 'package:flutter_movies_api/features/widgets/icon_back.dart';
+import 'package:flutter_movies_api/features/widgets/productions_image.dart';
+import 'package:flutter_movies_api/features/widgets/top_details.dart';
 import 'package:intl/intl.dart';
 
 class MovieView extends StatelessWidget {
@@ -30,7 +30,7 @@ class MovieView extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: ListView(
               children: [
-                MovieImage(
+                ProductionsImage(
                   image: movieModel.primaryImage,
                 ),
                 Text(
@@ -51,7 +51,7 @@ class MovieView extends StatelessWidget {
                   style: bodyLarge,
                   textAlign: TextAlign.center,
                 ),
-                DetailsMovie(
+                DetailsProductions(
                   productionCompanies: [
                     ...movieModel.productionCompanies.map((e) => e.name)
                   ],

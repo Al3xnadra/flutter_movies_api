@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_movies_api/domain/models/movie_model.dart';
 import 'package:flutter_movies_api/domain/repositories/movie_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
