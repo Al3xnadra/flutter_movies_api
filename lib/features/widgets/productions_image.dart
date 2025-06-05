@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MovieImage extends StatelessWidget {
-  const MovieImage({
+class ProductionsImage extends StatelessWidget {
+  const ProductionsImage({
     super.key,
     required this.image,
   });

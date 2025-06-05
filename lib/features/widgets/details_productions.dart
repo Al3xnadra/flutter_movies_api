@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_movies_api/app/config/constants.dart';
 import 'package:intl/intl.dart';
 
-class DetailsMovie extends StatelessWidget {
-  const DetailsMovie(
+class DetailsProductions extends StatelessWidget {
+  const DetailsProductions(
       {super.key,
       this.productionCompanies,
       this.filmingLocations,
