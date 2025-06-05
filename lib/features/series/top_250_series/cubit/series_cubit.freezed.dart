@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$SeriesState {
   List<SeriesModel> get seriesModel => throw _privateConstructorUsedError;
+  List<LanguageModel> get languageModel => throw _privateConstructorUsedError;
 
   /// Create a copy of SeriesState
   /// with the given fields replaced by the non-null parameter values.
@@ -31,7 +32,7 @@ abstract class $SeriesStateCopyWith<$Res> {
           SeriesState value, $Res Function(SeriesState) then) =
       _$SeriesStateCopyWithImpl<$Res, SeriesState>;
   @useResult
-  $Res call({List<SeriesModel> seriesModel});
+  $Res call({List<SeriesModel> seriesModel, List<LanguageModel> languageModel});
 }
 
 /// @nodoc
@@ -50,12 +51,17 @@ class _$SeriesStateCopyWithImpl<$Res, $Val extends SeriesState>
   @override
   $Res call({
     Object? seriesModel = null,
+    Object? languageModel = null,
   }) {
     return _then(_value.copyWith(
       seriesModel: null == seriesModel
           ? _value.seriesModel
           : seriesModel // ignore: cast_nullable_to_non_nullable
               as List<SeriesModel>,
+      languageModel: null == languageModel
+          ? _value.languageModel
+          : languageModel // ignore: cast_nullable_to_non_nullable
+              as List<LanguageModel>,
     ) as $Val);
   }
 }
@@ -68,7 +74,7 @@ abstract class _$$SeriesStateImplCopyWith<$Res>
       __$$SeriesStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<SeriesModel> seriesModel});
+  $Res call({List<SeriesModel> seriesModel, List<LanguageModel> languageModel});
 }
 
 /// @nodoc
@@ -85,12 +91,17 @@ class __$$SeriesStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? seriesModel = null,
+    Object? languageModel = null,
   }) {
     return _then(_$SeriesStateImpl(
       seriesModel: null == seriesModel
           ? _value._seriesModel
           : seriesModel // ignore: cast_nullable_to_non_nullable
               as List<SeriesModel>,
+      languageModel: null == languageModel
+          ? _value._languageModel
+          : languageModel // ignore: cast_nullable_to_non_nullable
+              as List<LanguageModel>,
     ));
   }
 }
@@ -98,8 +109,11 @@ class __$$SeriesStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SeriesStateImpl implements _SeriesState {
-  const _$SeriesStateImpl({final List<SeriesModel> seriesModel = const []})
-      : _seriesModel = seriesModel;
+  const _$SeriesStateImpl(
+      {final List<SeriesModel> seriesModel = const [],
+      final List<LanguageModel> languageModel = const []})
+      : _seriesModel = seriesModel,
+        _languageModel = languageModel;
 
   final List<SeriesModel> _seriesModel;
   @override
@@ -110,9 +124,18 @@ class _$SeriesStateImpl implements _SeriesState {
     return EqualUnmodifiableListView(_seriesModel);
   }
 
+  final List<LanguageModel> _languageModel;
+  @override
+  @JsonKey()
+  List<LanguageModel> get languageModel {
+    if (_languageModel is EqualUnmodifiableListView) return _languageModel;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_languageModel);
+  }
+
   @override
   String toString() {
-    return 'SeriesState(seriesModel: $seriesModel)';
+    return 'SeriesState(seriesModel: $seriesModel, languageModel: $languageModel)';
   }
 
   @override
@@ -121,12 +144,16 @@ class _$SeriesStateImpl implements _SeriesState {
         (other.runtimeType == runtimeType &&
             other is _$SeriesStateImpl &&
             const DeepCollectionEquality()
-                .equals(other._seriesModel, _seriesModel));
+                .equals(other._seriesModel, _seriesModel) &&
+            const DeepCollectionEquality()
+                .equals(other._languageModel, _languageModel));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_seriesModel));
+      runtimeType,
+      const DeepCollectionEquality().hash(_seriesModel),
+      const DeepCollectionEquality().hash(_languageModel));
 
   /// Create a copy of SeriesState
   /// with the given fields replaced by the non-null parameter values.
@@ -138,11 +165,14 @@ class _$SeriesStateImpl implements _SeriesState {
 }
 
 abstract class _SeriesState implements SeriesState {
-  const factory _SeriesState({final List<SeriesModel> seriesModel}) =
-      _$SeriesStateImpl;
+  const factory _SeriesState(
+      {final List<SeriesModel> seriesModel,
+      final List<LanguageModel> languageModel}) = _$SeriesStateImpl;
 
   @override
   List<SeriesModel> get seriesModel;
+  @override
+  List<LanguageModel> get languageModel;
 
   /// Create a copy of SeriesState
   /// with the given fields replaced by the non-null parameter values.
