@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_movies_api/app/config/theme_app.dart';
 import 'package:flutter_movies_api/domain/models/movie_model.dart';
 import 'package:flutter_movies_api/domain/models/series_model.dart';
 import 'package:flutter_movies_api/features/bottom_navigation/view/bottom_navigation_view.dart';
@@ -40,7 +41,8 @@ class MyApp extends StatelessWidget {
           ],
           // onGenerateTitle: (BuildContext context) =>
           // AppLocalizations.of(context)!.appTitle,
-          theme: ThemeData(),
+          // theme: ThemeData(),
+          theme: ThemeApp.darkTheme,
           // darkTheme: ThemeData.dark(),
           themeMode: settingsController.themeMode,
           routerConfig: GoRouter(

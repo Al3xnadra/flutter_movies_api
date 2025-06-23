@@ -47,3 +47,12 @@ flutter:
     # Add assets from the images directory to the application.
     - assets/images/
     - .env
+
+  fonts:
+    - family: AlbertSans
+      fonts:
+        - asset: assets/fonts/AlbertSans-Regular.ttf
+        - asset: assets/fonts/AlbertSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/AlbertSans-Bold.ttf
+          weight: 700
