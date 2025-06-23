@@ -5,6 +5,7 @@ import 'package:flutter_movies_api/features/bottom_navigation/cubit/bottom_navig
 import 'package:flutter_movies_api/features/home/page/home_page.dart';
 import 'package:flutter_movies_api/features/movies/top_250_movies/page/top_250_movies_page.dart';
 import 'package:flutter_movies_api/features/series/top_250_series/page/top_250_series_page.dart';
+import 'package:flutter_movies_api/features/settings/page/setting_page.dart';
 
 class BottomNavigationView extends StatelessWidget {
   BottomNavigationView({super.key});
@@ -13,6 +14,7 @@ class BottomNavigationView extends StatelessWidget {
     HomePage(),
     TopMoviesPage(),
     TopSeriesPage(),
+    SettingPage(),
   ];
 
   final myScrollController = ScrollController();
@@ -53,6 +55,15 @@ class BottomNavigationView extends StatelessWidget {
                     child: Icon(
                       Icons.movie_filter,
                       color: state.currentIndex == 2 ? Colors.red : Colors.grey,
+                    ),
+                  ),
+                  MaterialButton(
+                    minWidth: 40,
+                    onPressed: () =>
+                        context.read<BottomNavigationCubit>().changeIndex(3),
+                    child: Icon(
+                      Icons.settings,
+                      color: state.currentIndex == 3 ? Colors.red : Colors.grey,
                     ),
                   ),
                 ],
