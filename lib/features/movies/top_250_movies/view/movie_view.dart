@@ -48,7 +48,7 @@ class MovieView extends StatelessWidget {
                 SizedBox(height: 10),
                 Text(
                   movieModel.description,
-                  style: bodyLarge,
+                  style: headlineMedium,
                   textAlign: TextAlign.center,
                 ),
                 DetailsProductions(
